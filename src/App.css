@@ -1,0 +1,6 @@
+.active{
+    border-bottom: 8px solid blue;
+    background-color: rgba(28, 28, 29, 0.175);
+    box-shadow: rgba(132, 3, 3, 0.87) 0px 0px 0px 2px, rgba(27, 5, 123, 0.859) 0px 4px 6px -1px, rgba(1, 1, 136, 0.886) 0px 1px 0px inset;
+    transition: all 1s  ease-in-out;
+}
