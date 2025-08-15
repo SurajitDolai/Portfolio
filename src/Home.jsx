@@ -14,10 +14,17 @@ import { FaRegCopyright } from "react-icons/fa";
 import './App.css';
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-
+import Lenis from 'lenis'
 
 
 export default function Home() {
+  //  work lenis 
+  const lenis = new Lenis();
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
   // navbar menu
   const [active, setActive] = useState("home");
   const menuItems = [
@@ -70,10 +77,11 @@ export default function Home() {
 
   return (
     <div className='bg-gray-950  m-0 p-0 scroll-body' id='/'>
-      <nav id='home' className='sticky top-0 p-0 m-0'>
-        <ul className='flex  md:justify-end justify-around p-0 m-0 pt-2'>
+
+      <nav id='home' className='sticky top-0 p-0 m-0 mb-2'>
+        <ul className='flex  md:justify-end justify-around p-0 m-0 pt-2 '>
           {menuItems.map((item) => (
-            <li id='menu' className='md:m-2'> <a href={`#${item.id}`}
+            <li id='menu' className='md:m-2 '> <a href={`#${item.id}`}
               key={item.id}
               onClick={() => setActive(item.id)}
               className={`md:text-[20px] text-[10px] md:p-2 bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent p-1 font-bold  ${active === item.id ? "border-b-2 border-b-blue-600 italic rounded-3xl all ease-in-out duration-700" : ""
@@ -84,10 +92,11 @@ export default function Home() {
           ))}
         </ul>
       </nav>
+
       <div className=" md:h-screen md:w-full bg-[url(https://images.unsplash.com/photo-1712230879699-e8a0a389da63?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center" id='#'>
         <div className=' md:h-screen md:w-full bg-[rgba(0,0,0,0.8)]'>
           {/* photo and heading */}
-          <div className='grid md:grid-cols-2 mt-6 mb-12' id=''>
+          <div className='grid md:grid-cols-2  mb-12' id=''>
             <div className=' mx-auto md:my-16' id='title'>
               <p className='md:text-5xl text-2xl my-2 bg-gradient-to-r from-white to-blue-600 to-35%  bg-clip-text text-transparent  font-bold italic'>Hello!!!</p>
               <p className='md:text-[40px] text-center my-2   bg-gradient-to-r from-white via-blue-500 to-blue-600  bg-clip-text text-transparent  font-bold italic'>I'm Surajit Dolai</p>
@@ -107,7 +116,7 @@ export default function Home() {
       </div>
 
       {/* about me */}
-      <div className='w-[85%]  m-auto md:mt-56 md:h-screen ' id='about' >
+      <div className='w-[85%]  m-auto md:mt- md:h-screen ' id='about' >
         <p className='text-3xl bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent font-bold italic  border-b-2 border-blue-800 rounded-2xl p-3 inline-block' >About Me</p>
         <p className='md:w-[90%] text-gray-400 border-gray-800 border-t-0 md:mt-12 md:ps-28  text-2xl/13 font-mono  ' >
           I am a recent postgraduate and a passionate Full Stack Web Developer with a strong foundation in the MERN stack (MongoDB, Express.js, React.js, and Node.js). I have hands-on experience building dynamic and responsive web applications, focusing on clean code, API integration, and user-centric design. I’ve completed real-world projects like a Blood Bank Management System, and I’m eager to contribute to innovative development teams. I’m a quick learner, team player, and always motivated to grow in a collaborative environment.
@@ -207,23 +216,23 @@ export default function Home() {
           </div> */}
 
           <div className='grid grid-cols-2'>
-          {
-            skills.map((skill)=>{
-              return(
-                   <div className='flex flex-col justify-center items-center'>
-             <div className='text-white w-[80%] my-1'>
-              <label htmlFor="" className='bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent font-bold italic text-2xl'>{skill.name}</label><br />
-              <input type="range" min={10} max={100} value={skill.value} className='w-[90%] accent-orange-600 shadow-lg shadow-orange-600 focus:shadow-[glow]'/><span>{skill.value}%</span>
-            </div>
-           </div>
-              )
-            })
-          }
+            {
+              skills.map((skill) => {
+                return (
+                  <div className='flex flex-col justify-center items-center'>
+                    <div className='text-white w-[80%] my-1'>
+                      <label htmlFor="" className='bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent font-bold italic text-2xl'>{skill.name}</label><br />
+                      <input type="range" min={10} max={100} value={skill.value} className='w-[90%] accent-orange-600 shadow-lg shadow-orange-600 focus:shadow-[glow]' /><span>{skill.value}%</span>
+                    </div>
+                  </div>
+                )
+              })
+            }
             <div>
 
             </div>
           </div>
-          
+
         </div>
       </div>
 
