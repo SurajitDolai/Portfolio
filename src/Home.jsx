@@ -15,7 +15,8 @@ import './App.css';
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import Lenis from 'lenis'
-
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   //  work lenis 
@@ -57,28 +58,137 @@ export default function Home() {
   ]);
 
   // GSAP FUNCTION
+  
   useGSAP(() => {
-    gsap.from("#menu", {
+    const t=gsap.timeline();
+    t.from("#menu", {
       y: -30,
-      duration: 1,
-      delay: 1,
+      duration: 0.2,
       opacity: 0,
-      stagger: 0.2
+      stagger: 0.1
     })
 
-    gsap.from('#title p ', {
+   t.from('#title p ', {
       x: -60,
       duration: 1,
+      opacity: 0,
+      stagger: 0.1
+    })
+    t.from('#img', {
+      x: 60,
+      duration: 0.5,
+      opacity: 0,
+    })
+    t.from('#btn', {
+      y: 30,
+      duration: 1,
+      opacity: 0,
+    })
+    // about me animation
+    gsap.from('#description', {
+      x: 600,
+      duration: 2,
       delay: 1,
       opacity: 0,
-      stagger: 0.8
+      scrollTrigger:{
+        trigger:'#description',
+        scroller:'body',
+        start:'top 80%',
+        end:'top 30%',
+        scrub:2,
+      }
+    })
+    // tech stack animation
+    gsap.from('#stack',{
+      scrollTrigger:{
+        trigger:'#stack',
+        start:'top 80%',
+        end:'top 30%',
+        scrub:3,
+      },
+      x:300,
+      opacity:0,
+      duration:3,
+      width:'50%',
+      ease:'power4.out',
+      stagger:0.3
+    })
+    // project animation
+    gsap.from('#project-1',{
+      scale:0,
+      opacity:0,
+      duration:5,
+      stagger:1,
+      scrollTrigger:{
+        trigger:'#project-1',
+        scroller:'body',
+        start:'top 80%',
+        end:'top 30%',
+        scrub:3,
+      }
+    })
+    // education animation
+    const t1=gsap.timeline({
+      scrollTrigger:{
+        trigger:'#education',
+        scroller:'body',
+        start:'top 80%',
+        end:'top 30%',
+        scrub:3,
+      }
+    });
+    t1.from('#edu-1',{
+      x:-300,
+      opacity:0,
+      duration:3,
+   
+    },"a")
+    t1.from('#edu-2',{
+      x:300,
+      opacity:0,
+      duration:3,
+    },"a")
+    t1.from('#edu-3',{
+      scrollTrigger:{
+        trigger:'#edu-1',
+        scroller:'body',
+        start:'top 80%',
+        end:'top 30%',
+        scrub:3,
+      },
+      x:300,
+      opacity:0,
+      duration:3,
+    },"a")
+    // contact animation
+    const t2=gsap.timeline({
+       scrollTrigger:{
+        trigger:'#a_social',
+        scroller:'body',
+        start:'top 90%',
+        end:'top 60%',
+        scrub:2,
+      }});
+
+    t2.from('#a_social',{
+      duration:3,
+      stagger:1,
+      scale:1.2,
+      delay:1,
+      backgroundColor:'blue',
+    })
+
+    t2.to('#social',{
+     scale:1,
+     duration:3,
+     stagger:0.5,
     })
   })
-
+  
   return (
-    <div className='bg-gray-950  m-0 p-0 scroll-body' id='/'>
+    <div className='bg-gray-950  m-0 p-0 ' id='/' >
 
-      <nav id='home' className='sticky top-0 p-0 m-0 mb-2'>
+        <nav id='home' className='sticky top-0 p-0 m-0 mb-2'>
         <ul className='flex  md:justify-end justify-around p-0 m-0 pt-2 '>
           {menuItems.map((item) => (
             <li id='menu' className='md:m-2 '> <a href={`#${item.id}`}
@@ -92,7 +202,6 @@ export default function Home() {
           ))}
         </ul>
       </nav>
-
       <div className=" md:h-screen md:w-full bg-[url(https://images.unsplash.com/photo-1712230879699-e8a0a389da63?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center" id='#'>
         <div className=' md:h-screen md:w-full bg-[rgba(0,0,0,0.8)]'>
           {/* photo and heading */}
@@ -101,14 +210,14 @@ export default function Home() {
               <p className='md:text-5xl text-2xl my-2 bg-gradient-to-r from-white to-blue-600 to-35%  bg-clip-text text-transparent  font-bold italic'>Hello!!!</p>
               <p className='md:text-[40px] text-center my-2   bg-gradient-to-r from-white via-blue-500 to-blue-600  bg-clip-text text-transparent  font-bold italic'>I'm Surajit Dolai</p>
               <p className='md:text-2xl text-end my-2  text-amber-50  font-mono'>Full Stack Developer </p>
-              <div className='text-amber-300 md:none'>
-                <button className='bg-gray-700 font-mono px-3 py-2 rounded-3xl mt-10 hover:bg-gray-500 hover:shadow-md hover:shadow-blue-300 text-[20px] transition-all duration-600 ease-in-out cursor-pointer md:block hidden'><a href="#contact">Contact me</a></button>
+              <div className='text-amber-300 md:none' id='btn'>
+                <button  className='bg-gray-700 font-mono px-3 py-2 rounded-3xl mt-10 hover:bg-gray-500 hover:shadow-md hover:shadow-blue-300 text-[20px] transition-all duration-600 ease-in-out cursor-pointer md:block hidden'><a href="#contact">Contact me</a></button>
               </div>
             </div>
             <div className=''>
-              <img src={profile} alt="" className='md:h-[350px] md:w-[400px] w-[200px] m-auto my-4 md:my-20 ' />
+              <img src={profile} alt="" className='md:h-[350px] md:w-[400px] w-[200px] m-auto my-4 md:my-20 ' id='img'/>
               <div className='text-amber-300 md:none'>
-                <button onClick={handleDownload} className='bg-gray-700 font-mono px-3 py-2 rounded-3xl md:mt-10 my-5 mx-auto hover:bg-gray-500 hover:shadow-md hover:shadow-amber-50 text-[20px] transition-all duration-600 ease-in-out cursor-pointer md:hidden block'>Resume Download</button>
+                <button onClick={handleDownload} id='btn' className='bg-gray-700 font-mono px-3 py-2 rounded-3xl md:mt-10 my-5 mx-auto hover:bg-gray-500 hover:shadow-md hover:shadow-amber-50 text-[20px] transition-all duration-600 ease-in-out cursor-pointer md:hidden block'>Resume Download</button>
               </div>
             </div>
           </div>
@@ -118,7 +227,7 @@ export default function Home() {
       {/* about me */}
       <div className='w-[85%]  m-auto md:mt- md:h-screen ' id='about' >
         <p className='text-3xl bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent font-bold italic  border-b-2 border-blue-800 rounded-2xl p-3 inline-block' >About Me</p>
-        <p className='md:w-[90%] text-gray-400 border-gray-800 border-t-0 md:mt-12 md:ps-28  text-2xl/13 font-mono  ' >
+        <p className='md:w-[90%] text-gray-400 border-gray-800 border-t-0 md:mt-12 md:ps-28  text-2xl/13 font-mono' id='description' >
           I am a recent postgraduate and a passionate Full Stack Web Developer with a strong foundation in the MERN stack (MongoDB, Express.js, React.js, and Node.js). I have hands-on experience building dynamic and responsive web applications, focusing on clean code, API integration, and user-centric design. I’ve completed real-world projects like a Blood Bank Management System, and I’m eager to contribute to innovative development teams. I’m a quick learner, team player, and always motivated to grow in a collaborative environment.
         </p>
       </div>
@@ -220,9 +329,9 @@ export default function Home() {
               skills.map((skill) => {
                 return (
                   <div className='flex flex-col justify-center items-center'>
-                    <div className='text-white w-[80%] my-1'>
+                    <div className='text-white w-[80%] my-1' id='stack'>
                       <label htmlFor="" className='bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent font-bold italic text-2xl'>{skill.name}</label><br />
-                      <input type="range" min={10} max={100} value={skill.value} className='w-[90%] accent-orange-600 shadow-lg shadow-orange-600 focus:shadow-[glow]' /><span>{skill.value}%</span>
+                      <input type="range" min={10} max={100} value={skill.value} className='w-[90%] accent-blue-800 shadow-lg shadow-blue-500 focus:shadow-[glow]' /><span>{skill.value}%</span>
                     </div>
                   </div>
                 )
@@ -240,7 +349,7 @@ export default function Home() {
       <div className='w-[90%] m-auto md:my-4 md:py-0 md:px-2 md:h-screen ' id='project'>
         <p className='text-3xl bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent font-bold italic   border-b-2 border-blue-800 rounded-2xl p-3 inline-block my-10 md:my-0 '>Project</p>
         <div className='grid md:grid-cols-5 gap-10 md:my-24' >
-          <div className='shadow-lg shadow-black rounded-2xl cursor-pointer' data-aos="zoom-in-up">
+          <div className='shadow-lg shadow-black rounded-2xl cursor-pointer' id='project-1'>
             <img src={swiggy} width={500} height={200} alt="" className='transition-all duration-500 ease-in-out hover:scale-125 ' />
 
             <p className='text-center text-2xl   my-3 mx-2 px-3 py-2 rounded-3xl shadow-md  shadow-amber-50 font-mono hover:scale-90 hover:bg-fuchsia-500'><a href="https://swiggy-clone-six-steel.vercel.app" className='bg-gradient-to-r from-white to-blue-600 to-35%  bg-clip-text text-transparent'>Demo</a></p>
@@ -248,7 +357,7 @@ export default function Home() {
 
           </div>
 
-          <div className='shadow-lg shadow-black rounded-2xl cursor-pointer' data-aos="zoom-in-up">
+          <div className='shadow-lg shadow-black rounded-2xl cursor-pointer' id='project-1'>
             <img src={restaurant} width={500} height={200} alt="" className='transition-all duration-500 ease-in-out hover:scale-125' />
 
             <p className='text-center text-2xl text-white  my-3 mx-2 px-3 py-2 rounded-3xl shadow-md shadow-amber-50 font-mono hover:scale-90 hover:bg-fuchsia-500'><a href="https://swiggy-clone-six-steel.vercel.app" className='bg-gradient-to-r from-white to-blue-600 to-35%  bg-clip-text text-transparent'>Demo</a></p>
@@ -256,7 +365,7 @@ export default function Home() {
 
           </div>
 
-          <div className='shadow-lg shadow-black rounded-2xl cursor-pointer' data-aos="zoom-in-up">
+          <div className='shadow-lg shadow-black rounded-2xl cursor-pointer' id='project-1'>
             <img src={bloodbank} width={500} height={200} alt="" className='transition-all duration-500 ease-in-out hover:scale-125' />
             <p className='text-center text-2xl text-white  my-3 mx-2 px-3 py-2 rounded-3xl shadow-md shadow-amber-50 font-mono hover:scale-90 hover:bg-fuchsia-500'><a href="https://swiggy-clone-six-steel.vercel.app" className='bg-gradient-to-r from-white to-blue-600 to-35%  bg-clip-text text-transparent'>Demo</a></p>
             <p className='text-center text-2xl text-white  my-3 mx-2 px-3 py-2 rounded-3xl shadow-md shadow-amber-50 font-mono hover:scale-90 hover:bg-fuchsia-500'><a href="https://github.com/SurajitDolai/Swiggy-clone" className='bg-gradient-to-r from-white to-blue-600 to-35%  bg-clip-text text-transparent'>Github</a></p>
@@ -269,7 +378,7 @@ export default function Home() {
       {/* Education */}
       <div className='w-[90%]  m-auto my-5 md:my-0 md:h-screen ' id='education' >
         <span className=' inline-block text-3xl bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent font-bold italic  border-b-2 border-blue-800 rounded-2xl p-3  my-5 mx-auto  md:my-0'>Education</span>
-        <div className='md:mt-5 md:my-2 py-4'>
+        <div className='md:mt-5 md:my-2 py-4' id='edu-1'>
           <div className='md:w-[60%] bg-gray-950 py-2 shadow-lg text-gray-400 ring-1 shadow-gray-500 rounded-e-full  text-[20px] text-center font-serif  transition-all duration-700 ease-in-out cursor-pointer ' >
             <p className='font-mono'>Meghnad Saha Institute of Technology</p>
             <p className='font-mono'>Master of Computer Applications (MCA)</p>
@@ -277,7 +386,7 @@ export default function Home() {
             <p className='font-mono'>Kolkata</p>
           </div>
         </div>
-        <div className=' my-5 py-4 ' >
+        <div className=' my-5 py-4 ' id='edu-2'>
           <div className='md:w-[60%]  py-2 shadow-lg text-gray-400 bg-gray-950 ring-1 shadow-gray-500 rounded-s-full ms-auto  cursor-pointer  text-[20px] text-center font-serif '>
             <p className='font-mono'>Mahishadal Raj College</p>
             <p className='font-mono'>Bachelor of Computer Applications (BCA)</p>
@@ -285,7 +394,7 @@ export default function Home() {
             <p className='font-mono'>Mahishadal, East Medinipur</p>
           </div>
         </div>
-        <div className=' my-5 py-4'>
+        <div className=' my-5 py-4' id='edu-1'>
           <div className='md:w-[60%] bg-gray-950 py-2 shadow-lg text-gray-400 ring-1 shadow-gray-500 rounded-e-full text-[20px] text-center font-serif  cursor-pointer ' >
             <p className='font-mono'>Chaksimulia Kamakhya Vidyapith</p>
             <p className='font-mono'>High Secondary (H.S)</p>
@@ -312,11 +421,11 @@ export default function Home() {
               <p className='text-center text-2xl text-white font-serif my-3'>Contact Info</p>
               {/* <p className='text-white ps-20 flex my-2'><TfiEmail className=' mt-1 mr-1' /> Email: surajitdolai080@gmail.com</p> */}
               <div className='flex justify-evenly'>
-                <a href="mailto:surajit.dev.2001@gmail.com" className='border border-amber-50 p-2 shadow-md shadow-amber-50 rounded-3xl'><TfiEmail className='text-2xl text-white hover:text-red-400' /></a>
-                <a href="https://github.com/SurajitDolai" className='border border-amber-50 p-2 shadow-md shadow-amber-50 rounded-3xl'><FaGithub className='text-2xl text-white hover:text-black' /></a>
-                <a href="https://www.linkedin.com/in/surajit-dolai-282271321/" className='border border-amber-50 p-2 shadow-md shadow-amber-50 rounded-3xl'><FaLinkedin className='text-2xl text-white hover:text-blue-600 ' /></a>
-                <a href="#" className='border border-amber-50 p-2 shadow-md shadow-amber-50 rounded-3xl'><FaFacebook className='text-2xl text-white hover:text-blue-400' /></a>
-                <a href="#" className='border border-amber-50 p-2 shadow-md shadow-amber-50 rounded-3xl'><FaInstagramSquare className='text-2xl text-white hover:text-pink-600' /></a>
+                <a id='a_social' href="mailto:surajit.dev.2001@gmail.com" className='border border-amber-50 p-2 shadow-md shadow-amber-50 rounded-3xl'><TfiEmail className='text-2xl text-white hover:text-red-400' id='social'/></a>
+                <a id='a_social' href="https://github.com/SurajitDolai" className='border border-amber-50 p-2 shadow-md shadow-amber-50 rounded-3xl'><FaGithub className='text-2xl text-white hover:text-black' id='social'/></a>
+                <a id='a_social' href="https://www.linkedin.com/in/surajit-dolai-282271321/" className='border border-amber-50 p-2 shadow-md shadow-amber-50 rounded-3xl'><FaLinkedin className='text-2xl text-white hover:text-blue-600 ' id='social'/></a>
+                <a id='a_social' href="#" className='border border-amber-50 p-2 shadow-md shadow-amber-50 rounded-3xl'><FaFacebook className='text-2xl text-white hover:text-blue-400' id='social'/></a>
+                <a id='a_social' href="#" className='border border-amber-50 p-2 shadow-md shadow-amber-50 rounded-3xl'><FaInstagramSquare className='text-2xl text-white hover:text-pink-600' id='social'/></a>
               </div>
             </div>
           </div>
