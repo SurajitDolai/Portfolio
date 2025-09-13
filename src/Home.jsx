@@ -202,7 +202,7 @@ export default function Home() {
           ))}
         </ul>
       </nav>
-      <div className=" md:h-screen md:w-full bg-[url(https://images.unsplash.com/photo-1712230879699-e8a0a389da63?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center" id='#'>
+      <div className=" md:h-screen md:w-full bg-[url(https://images.unsplash.com/photo-1712230879699-e8a0a389da63?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center " id='#'>
         <div className=' md:h-screen md:w-full bg-[rgba(0,0,0,0.8)]'>
           {/* photo and heading */}
           <div className='grid md:grid-cols-2  mb-12' id=''>
@@ -214,7 +214,7 @@ export default function Home() {
                 <button  className='bg-gray-700 font-mono px-3 py-2 rounded-3xl mt-10 hover:bg-gray-500 hover:shadow-md hover:shadow-blue-300 text-[20px] transition-all duration-600 ease-in-out cursor-pointer md:block hidden'><a href="#contact">Contact me</a></button>
               </div>
             </div>
-            <div className=''>
+            <div className='overflow-hidden'>
               <img src={profile} alt="" className='md:h-[350px] md:w-[400px] w-[200px] m-auto my-4 md:my-20 ' id='img'/>
               <div className='text-amber-300 md:none'>
                 <button onClick={handleDownload} id='btn' className='bg-gray-700 font-mono px-3 py-2 rounded-3xl md:mt-10 my-5 mx-auto hover:bg-gray-500 hover:shadow-md hover:shadow-amber-50 text-[20px] transition-all duration-600 ease-in-out cursor-pointer md:hidden block'>Resume Download</button>
@@ -225,15 +225,15 @@ export default function Home() {
       </div>
 
       {/* about me */}
-      <div className='w-[85%]  m-auto md:mt- md:h-screen ' id='about' >
+      <div className='w-[85%]  m-auto md:mt- md:h-screen overflow-hidden' id='about' >
         <p className='text-3xl bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent font-bold italic  border-b-2 border-blue-800 rounded-2xl p-3 inline-block' >About Me</p>
-        <p className='md:w-[90%] text-gray-400 border-gray-800 border-t-0 md:mt-12 md:ps-28  text-2xl/13 font-mono' id='description' >
+        <p className='md:w-[90%] text-gray-400 border-gray-800 border-t-0 md:mt-12 md:ps-28 text-justify text-2xl/13 font-mono overflow-hidden' id='description' >
           I am a recent postgraduate and a passionate Full Stack Web Developer with a strong foundation in the MERN stack (MongoDB, Express.js, React.js, and Node.js). I have hands-on experience building dynamic and responsive web applications, focusing on clean code, API integration, and user-centric design. I’ve completed real-world projects like a Blood Bank Management System, and I’m eager to contribute to innovative development teams. I’m a quick learner, team player, and always motivated to grow in a collaborative environment.
         </p>
       </div>
 
       {/* tech stack */}
-      <div className=''>
+      <div className='overflow-hidden'>
         <div className='w-[90%] m-auto md:my-4 md:py-8 md:px-2 md:h-screen'>
           <p className='text-3xl bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent font-bold italic   border-b-2 border-blue-800 rounded-2xl p-3 inline-block my-7' >Tech Stack</p>
           {/* <div className='grid md:grid-cols-6 grid-cols-2 md:gap-4 gap-2 md:mt-20 md:pt -6'>
@@ -376,30 +376,30 @@ export default function Home() {
       </div>
 
       {/* Education */}
-      <div className='w-[90%]  m-auto my-5 md:my-0 md:h-screen ' id='education' >
+      <div className='w-[90%]  m-auto my-5 md:my-0 md:h-screen overflow-hidden' id='education' >
         <span className=' inline-block text-3xl bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent font-bold italic  border-b-2 border-blue-800 rounded-2xl p-3  my-5 mx-auto  md:my-0'>Education</span>
         <div className='md:mt-5 md:my-2 py-4' id='edu-1'>
           <div className='md:w-[60%] bg-gray-950 py-2 shadow-lg text-gray-400 ring-1 shadow-gray-500 rounded-e-full  text-[20px] text-center font-serif  transition-all duration-700 ease-in-out cursor-pointer ' >
-            <p className='font-mono'>Meghnad Saha Institute of Technology</p>
-            <p className='font-mono'>Master of Computer Applications (MCA)</p>
-            <p className='font-mono'>2023 - 2025</p>
-            <p className='font-mono'>Kolkata</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>Meghnad Saha Institute of Technology</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>Master of Computer Applications (MCA)</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>2023 - 2025</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>Kolkata</p>
           </div>
         </div>
         <div className=' my-5 py-4 ' id='edu-2'>
           <div className='md:w-[60%]  py-2 shadow-lg text-gray-400 bg-gray-950 ring-1 shadow-gray-500 rounded-s-full ms-auto  cursor-pointer  text-[20px] text-center font-serif '>
-            <p className='font-mono'>Mahishadal Raj College</p>
-            <p className='font-mono'>Bachelor of Computer Applications (BCA)</p>
-            <p className='font-mono'>2020 - 2023</p>
-            <p className='font-mono'>Mahishadal, East Medinipur</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>Mahishadal Raj College</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>Bachelor of Computer Applications (BCA)</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>2020 - 2023</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>Mahishadal, East Medinipur</p>
           </div>
         </div>
         <div className=' my-5 py-4' id='edu-1'>
           <div className='md:w-[60%] bg-gray-950 py-2 shadow-lg text-gray-400 ring-1 shadow-gray-500 rounded-e-full text-[20px] text-center font-serif  cursor-pointer ' >
-            <p className='font-mono'>Chaksimulia Kamakhya Vidyapith</p>
-            <p className='font-mono'>High Secondary (H.S)</p>
-            <p className='font-mono'>2018 - 2020</p>
-            <p className='font-mono'>Thekuachak, East Medinipur</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>Chaksimulia Kamakhya Vidyapith</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>High Secondary (H.S)</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>2018 - 2020</p>
+            <p className='font-mono md:text-[20px] text-[12px]'>Thekuachak, East Medinipur</p>
           </div>
         </div>
       </div>
@@ -409,15 +409,15 @@ export default function Home() {
         <div className='w-[85%] m-auto  mb-0 rounded-3xl  md:block md:h-screen' id='contact'  >
           <p className='text-3xl bg-gradient-to-r from-white to-blue-700 bg-clip-text text-transparent font-bold italic  border-b-2 border-blue-800 rounded-2xl p-3 inline-block  md:mb-20 mb-6' >Contact</p>
           <div className='grid md:grid-cols-2 mt-[18%]'>
-            <div className='ps-8'>
-              <p className='ps-28 text-2xl text-white font-serif my-3'>Kolkata</p>
-              <p className='text-white ps-18 md:ps-20 flex  my-5'><PiPhoneDuotone className=' mt-1 mr-1' />phone: 8001328027</p>
-              <p className='flex text-white ps-18 md:ps-20 my-5' > <ImLocation2 className=' mt-1 mr-1 ' /> Address: <br />
+            <div className='ps-8 '>
+              <p className='md:ps-28 text-2xl text-white font-serif md:my-3'>Kolkata</p>
+              <p className='text-white ps-5 md:ps-20 flex  my-5'><PiPhoneDuotone className=' mt-1 mr-1' />phone: 8001328027</p>
+              <p className='flex text-white ps-5 md:ps-20 my-5' > <ImLocation2 className=' mt-1 mr-1 ' /> Address: <br />
                 Garia Station ,Kolkata <br />
                 Dr BR Ambedkar Road , 700084
               </p>
             </div>
-            <div className=' md:ps-20'>
+            <div className=' md:ps-20 mt-[200px] md:mt-0' >
               <p className='text-center text-2xl text-white font-serif my-3'>Contact Info</p>
               {/* <p className='text-white ps-20 flex my-2'><TfiEmail className=' mt-1 mr-1' /> Email: surajitdolai080@gmail.com</p> */}
               <div className='flex justify-evenly'>
