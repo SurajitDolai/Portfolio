@@ -1,5 +1,104 @@
 @import "tailwindcss";
 
-body{
-    overflow-y: none;
+body::-webkit-scrollbar{
+    display: none;
+}
+
+.liquid-ether-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+
+
+
+
+/* ScrollStack base scroller */
+.scroll-stack-scroller {
+  position: relative;
+  width: 100%;
+  height: auto; /* let page control full height */
+  overflow-y: visible; /* important so window scrolling works */
+  overflow-x: visible;
+}
+
+/* inner wrapper to provide breathing space */
+.scroll-stack-inner {
+  padding: 15vh 5vw 50vh;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* cards — glassy / elevated */
+.scroll-stack-card {
+  position: relative;
+  transform-origin: top center;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  min-height: 18rem;
+  width: 100%;
+  margin: 2.5rem 0;
+  padding: 2.25rem;
+  border-radius: 20px;
+  background: rgba(24, 6, 36, 0.6);
+  border: 1px solid rgba(147, 51, 234, 0.12);
+  transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+}
+
+/* subtle hover */
+.scroll-stack-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* final spacer so the stack can release & the page continues to scroll */
+.scroll-stack-end {
+  width: 100%;
+  height: 140vh;  /* ensure more than viewport height so last card unpins cleanly */
+}
+
+/* responsive tweaks */
+@media (max-width: 768px) {
+  .scroll-stack-inner {
+    padding: 10vh 1.25rem 35vh;
+  }
+  .scroll-stack-card {
+    padding: 1.25rem;
+    min-height: 14rem;
+    border-radius: 14px;
+  }
+}
+/* ----------------------------------------about page shiny text---------------------------------------- */
+
+.shiny-text {
+  color: #b5b5b5a4; /* Adjust this color to change intensity/style */
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+.shiny-text.disabled {
+  animation: none;
 }

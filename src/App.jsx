@@ -1,3 +1,4 @@
+// import Orb from './animate/Orb'
 import './App.css'
 import Home from './Home'
 
@@ -5,7 +6,10 @@ function App() {
 
   return (
     <div>  
-     <Home/>
+     
+    <div className='absolute'>
+       <Home/>
+    </div>
     </div>
   )
 }
