@@ -1,5 +1,6 @@
 import swiggy from '../../public/swiggy.png'
 import bloodbank from '../../public/bloodbank.png'
+import todo from '../../public/todo.png'
 import restaurant from '../../public/restaurant.png'
 import school_management from '../../public/school.png';
 import { motion } from "motion/react";
@@ -9,7 +10,7 @@ export default function Project() {
   const items = [
     {
       name: "Blood Bank Management Project",
-      img: "../../public/bloodbank.png",
+      img: bloodbank,
       desc: [
         "Manage donors and blood stock efficiently.",
         "Handle blood requests and allocations quickly.",
@@ -22,7 +23,7 @@ export default function Project() {
     },
     {
       name: "Todo App",
-      img: "../../public/todo.png",
+      img: todo,
       desc: [
         "Add Tasks – Users can quickly add new tasks with a title or short description.",
         "View Tasks – All pending and completed tasks are displayed in a clear, organized list.",
@@ -35,7 +36,7 @@ export default function Project() {
     },
     {
       name: "Swiggy clone",
-      img: "../../public/swiggy.png",
+      img: swiggy,
       desc: [
         "Swiggy clone only frontend design with React.js.",
         "Responsive design for mobile and desktop users.",
@@ -48,7 +49,7 @@ export default function Project() {
     },
     {
       name: "Restaurant Management Project",
-      img: "../../public/restaurant.png",
+      img: restaurant,
       desc: [
         "Manage restaurant operations efficiently.",
         "Handle table reservations and customer orders.",
@@ -61,7 +62,7 @@ export default function Project() {
     },
     {
       name: "School Management Project",
-      img: "../../public/school.png",
+      img: school_management,
       desc: [
         "Manage student data and personal details.",
         "Handle subjects and class information.",

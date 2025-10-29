@@ -2,6 +2,7 @@ import profile from '../../public/t1.png'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
+
 export default function First_home() {
     useGSAP(() => {
         const t = gsap.timeline();
