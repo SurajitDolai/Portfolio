@@ -73,13 +73,13 @@ export default function First_home() {
         document.body.removeChild(link);
     };
     return (
-        <div className=" md:h-screen md:w-full b-[url(https://images.unsplash.com/photo-1712230879699-e8a0a389da63?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-cover bg-center " id='#'>
+        <div className=" h-screen md:w-full  bg-center " id='#'>
             <div className=' md:h-screen md:w-full bg-[rgba(0,0,0,0.8)'>
                 {/* photo and heading */}
-                <div className='  mb-12 overflow-hidden' id=''>
-                    <div className=' mx-auto md:my-16 ' id='title'>0
+                <div className='  md:mb-12 overflow-hidden' id=''>
+                    <div className=' mx-auto md:my-16 ' id='title'>
 
-                        <div className='flex justify-center gap-2'>
+                        <div className='flex justify-center gap-2 mt-12 md:mt-0'>
                             <div className='md:text-8xl text-end my-2  text-amber-50 font-bold  font-[Berlin Sans FB Demi] ' id='left'>Full Stack</div>
                             <div className='md:text-8xl text-end my-2  text-gray-500 font-bold  font-[Berlin Sans FB Demi]' id='right'> &nbsp;Developer</div>
                         </div>
@@ -89,32 +89,36 @@ export default function First_home() {
                             <p className='md:text-[40px] text-center my-2   bg-gradient-to-r from-white from-30%  to-gray-500 to-60%  bg-clip-text text-transparent  font-bold  z-30'>I'm Surajit Dolai</p>
                         </div>
 
-                        <div className='flex justify-center items-center gap-5 mt-30'>
+                        <div className='flex justify-center items-center gap-5 md:mt-30 my-10'>
                             <div className='hidden' id='social1'></div>
                             <div className='hidden' id='social1'></div>
-                            <a href='https://github.com/SurajitDolai' className='h-12 w-11 rounded-4xl bg-gray-600 shadow-lg  shadow-gray-400  flex justify-center items-center group
+                            <a href='https://github.com/SurajitDolai' className=' h-8 w-8
+                            md:h-12 md:w-11 rounded-4xl bg-gray-600 shadow-lg  shadow-gray-400  flex justify-center items-center group
                             hover:bg-gray-800 hover:w-auto hover:p-3 hover:gap-2 transition-all duration-600 ease-in-out cursor-pointer
                             ' id='social1'>
-                                <i className="fa-brands fa-github text-white text-3xl" ></i>
+                                <i className="fa-brands fa-github text-white  text-[20px] md:text-3xl" ></i>
                                 <span className='hidden group-hover:block group-hover:text-gray-300'>GitHub</span>
                             </a>
 
-                            <a href='https://www.linkedin.com/in/surajit-dolai-282271321/' className='h-12 w-11 rounded-4xl bg-blue-800 shadow-lg shadow-blue-600 sh  flex justify-center items-center group
+                            <a href='https://www.linkedin.com/in/surajit-dolai-282271321/' className=' h-8 w-8
+                            md:h-12 md:w-11 rounded-4xl bg-blue-800 shadow-lg shadow-blue-600 sh  flex justify-center items-center group
                               hover:bg-gray-800 hover:w-auto hover:p-3 hover:gap-2 transition-all duration-600 ease-in-out cursor-pointer
                             ' id='social1'>
-                                <i className="fa-brands fa-linkedin-in text-white text-3xl" ></i>
+                                <i className="fa-brands fa-linkedin-in text-white  text-[20px] md:text-3xl" ></i>
                                 <span className='hidden group-hover:block group-hover:text-gray-300'>LinkedIn</span>
                             </a>
-                            <div className='h-12 w-11 rounded-4xl bg-pink-600 shadow-lg shadow-pink-400 flex justify-center items-center  group
+                            <div className=' h-8 w-8
+                            md:h-12 md:w-11 rounded-4xl bg-pink-600 shadow-lg shadow-pink-400 flex justify-center items-center  group
                             hover:bg-gray-800 hover:w-auto hover:p-3 hover:gap-2 transition-all duration-600 ease-in-out cursor-pointer
                             ' id='social1'>
-                                <i className="fa-brands fa-instagram text-white text-3xl" ></i>
+                                <i className="fa-brands fa-instagram text-white  text-[20px] md:text-3xl" ></i>
                                 <span className='hidden group-hover:block group-hover:text-gray-300'>Instagram</span>
                             </div>
-                            <div className='h-12 w-11 rounded-4xl bg-blue-600 shadow-lg shadow-blue-400 flex justify-center items-center group
+                            <div className=' h-8 w-8
+                            md:h-12 md:w-11 rounded-4xl bg-blue-600 shadow-lg shadow-blue-400 flex justify-center items-center group
                              hover:bg-gray-800 hover:w-auto hover:p-3 hover:gap-2 transition-all duration-600 ease-in-out cursor-pointer
                             ' id='social1'>
-                                <i className="fa-brands fa-facebook  text-white text-3xl p-0 m-0" ></i>
+                                <i className="fa-brands fa-facebook  text-white text-[20px] md:text-3xl p-0 m-0" ></i>
                                 <span className='hidden group-hover:block group-hover:text-gray-300'>Facebook</span>
                             </div>
                             <div className='hidden' id='social1'></div>

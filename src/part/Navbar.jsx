@@ -35,7 +35,7 @@ export default function Navbar() {
     })
     return (
         <nav id='home' className='sticky top-0 p-0 m-0  mb-2 z-50'>
-            <ul className='w-[40%]  backdrop-blur-2xl mx-auto flex  md:justify-center justify-around p-0 m-0 pt-1 pb-1  border-2 border-gray-400 shadow-md shadow-blue-100 rounded-4xl'>
+            <ul className='md:w-[40%] w-[70%]  backdrop-blur-2xl mx-auto flex  md:justify-center justify-around p-0 m-0 pt-1 pb-1  border-2 border-gray-400 shadow-md shadow-blue-100 rounded-4xl'>
                 {menuItems.map((item) => (
                     <li id='menu' key={item.id} className='md:m-2 '> <a href={`#${item.id}`}
 

@@ -76,8 +76,8 @@ export default function Project() {
  
   ]
   return (
-    <div className='w-[90%] m-auto md:my-4 md:py-0 md:px-2 md:h' id='project'>
-      <p className='text-3xl bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent font-bold italic   border-b-2 border-gray-200 rounded-2xl p-3 inline-block my-10 md:my-0 '>Project</p>
+    <div className='w-[90%] m-auto md:my-4 md:py-0 md:px-2' id='project'>
+      <p className='text-3xl text-center bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent font-bold italic   border-b-2 border-gray-200 rounded-2xl p-3 md:inline-block my-10 md:my-0 '>Project</p>
 
 
       {items.map((e, i) => {
@@ -89,8 +89,8 @@ export default function Project() {
             exit={{ opacity: 0, y: -100 }}
             viewport={{ once: false, amount: 0.3 }}
 
-            className='flex p-3 border-2 border-violet-800 rounded-4xl shadow-md shadow-violet-100 w-[60%] even:ms-[10%] odd:ms-[30%] mt-6 ' key={i}>
-            <div className='w-[30%] flex flex-col justify-center items-center'>
+            className='flex md:flex-row flex-col p-3 border-2 border-violet-800 rounded-4xl shadow-md shadow-violet-100 md:w-[60%] md:even:ms-[10%] md:odd:ms-[30%] mt-6 ' key={i}>
+            <div className='w-[100%] md:w-[30%] flex flex-col justify-center items-center'>
               <img src={e.img} alt={bloodbank} className='' />
               <div className='flex gap-4 mt-4'>
                 <p className='bg-amber-600  px-7 py-2 rounded-full font-bold shadow-sm shadow-black hover:bg-amber-500 hover:shadow-2xs hover:shadow-amber-50'><a href="">Demo</a></p>
@@ -98,7 +98,7 @@ export default function Project() {
 
               </div>
             </div>
-            <div className=' w-[70%] p-6'>
+            <div className=' md:w-[70%] p-6'>
               <p className='text-white text-2xl font-bold'>{e.name}</p>
               {
                 e.desc && e.desc.map((el, ind) => {

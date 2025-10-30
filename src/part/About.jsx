@@ -46,10 +46,10 @@ export default function About() {
         })
     })
     return (
-        <div className='w-[85%]  m-auto md:mt- md:h-screen overflow-hidden' id='about' >
-            <p className='text-3xl bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent font-bold italic  border-b-2 border-gray-200 rounded-2xl p-3 inline-block' >About Me</p>
-            <div className='flex md:flex-row flex-col  justify-between items-center md:mt-20 mt-10 gap-10 '>
-                <div className='w-[70%]'>
+        <div className='w-[90%] md:w-[85%]  m-auto md:mt- md:h-screen overflow-hidden' id='about' >
+            <p className='md:text-3xl text-center bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent font-bold italic  border-b-2 border-gray-200 rounded-2xl p-3 md:inline-block' >About Me</p>
+            <div className='flex md:flex-row flex-col-reverse  justify-between items-center md:mt-20 mt-10 gap-10 '>
+                <div className='md:w-[70%]'>
                     <p className='md:w-[90%] 0 text-gray-400  border-t-0 md:mt-12 md:ps-28 text-start  font-serif overflow-hidden
                       shadow-lg shadow-violet-600 backdrop-blur-3xl  rounded-ful py-20 px-16
                     ' id='description' >
@@ -83,15 +83,15 @@ export default function About() {
                         />
                     </p>
                 </div>
-                <div className='w-[30%]  flex justify-center items-center'>
+                <div className='md:w-[30%]  flex justify-center items-center px-5 pt-6 pb-25'>
                     <motion.div
                         initial={{ opacity: 0, }}
                         whileInView={{ opacity: 1, }}
                         transition={{ duration: 0.8, ease: "easeInOut", type: "tween" }}
                         viewport={{ once: false }}
 
-                        className='h-67 w-67 rotate-45  flex justify-center items-center  overflow-hidden pt-10 ps-8 border-s-8 border-t-8   drop-shadow-md drop-shadow-cyan-600 shadow-lg shadow-cyan-600/50 z-50 backdrop-blur-lg ' id='myimage'>
-                        <img src={myimage} alt={myimage} className='rotate-[-45deg] w-[400px] bg-cover bg-center drop-shadow-2xl drop-shadow-cyan-600' />
+                        className='h-50 w-50 md:h-67 md:w-67 rotate-45  flex justify-center items-center  overflow-hidden pt-10 ps-8 border-s-8 border-t-8   drop-shadow-md drop-shadow-cyan-600 shadow-lg shadow-cyan-600/50 z-50 backdrop-blur-lg ' id='myimage'>
+                        <img src={myimage} alt={myimage} className='rotate-[-45deg] w-[200px] md:w-[400px] bg-cover bg-center drop-shadow-2xl drop-shadow-cyan-600' />
                     </motion.div>
                 </div>
 

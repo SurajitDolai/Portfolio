@@ -126,7 +126,7 @@ export default function Home() {
   return (
     <div className='bg-gradient-to-tr from-sky-800  to-black  m-0  p-0 pt-2' id='/' >
 
-      <div style={{ width: '100%', position: 'absolute' }} className='h-screen'>
+      <div style={{ width: '100%', position: 'absolute' }} className='md:h-screen'>
         <LiquidEther
           colors={['#5227FF', '#FF9FFC', '#B19EEF']}
           mouseForce={20}
@@ -143,6 +143,7 @@ export default function Home() {
           takeoverDuration={0.25}
           autoResumeDelay={3000}
           autoRampDuration={0.6}
+         
         />
       </div>
 

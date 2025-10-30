@@ -59,69 +59,69 @@ export default function TechStack() {
   });
   return (
     <div className='overflow-hidden'>
-      <div className='w-[90%] m-auto md:my-4 md:py-8 md:px-2 md:h-screen'>
-        <p className='text-3xl bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent font-bold italic   border-b-2 border-gray-200 rounded-2xl p-3 inline-block my-7' >Tech Stack</p>
-        <div className='grid md:grid-cols-8 grid-cols-2 md:gap-6 gap-2 md:mt-20 md:pt -6'>
+      <div className='w-[85%] md:w-[90%] m-auto md:my-4 md:py-8 md:px-2 md:h-screen'>
+        <p className='text-3xl text-center bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent font-bold italic   border-b-2 border-gray-200 rounded-2xl p-3 md:inline-block my-7' >Tech Stack</p>
+        <div className='grid md:grid-cols-8 grid-cols-2 md:gap-6 gap-3 md:mt-20 md:pt -6'>
 
           <div className='bg-orange-900 rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out' id="tech">
             <a href="https://html.com/">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" width={80} className='mx-auto drop-shadow-lg drop-shadow-black' />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto drop-shadow-lg drop-shadow-black' />
               {/* <p className='text-center text-white  font-mono ext-2xl font-bold pt-1 hidden group-hover:block group-hover:transition-all duration-700 ease-in-out'>id="tech"HTML</p> */}
             </a>
           </div>
 
           <div className='bg-blue-900 rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out ' id="tech" >
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" width={80} className='mx-auto drop-shadow-lg drop-shadow-black' />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto drop-shadow-lg drop-shadow-black' />
             {/* <p className='text-center text-blue-950 font-mono text-2xl font-bold hover:b'>CSS</p> */}
           </div>
 
           <div className='bg-yellow-400 rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out' id="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" width={80} className='mx-auto drop-shadow-lg drop-shadow-black' />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto drop-shadow-lg drop-shadow-black' />
             {/* <p className='text-center text-blue-950 font-mono text-2xl font-bold hover:b'>JavaScript</p> */}
           </div>
 
           <div className='bg-sky-800 rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out' id="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" width={80} className='mx-auto drop-shadow-lg drop-shadow-black' />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto drop-shadow-lg drop-shadow-black' />
             {/* <p className='text-center text-blue-950 font-mono text-2xl font-bold hover:b'>React jS</p> */}
           </div>
 
           <div className='bg-white rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out' id="tech1">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="" width={80} className='mx-auto bg-white drop-shadow-lg drop-shadow-black' />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto bg-white drop-shadow-lg drop-shadow-black' />
             {/* <p className='text-center text-blue-950 font-mono text-2xl font-bold hover:b'>Express JS</p> */}
           </div>
 
           <div className='bg-green-900 rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out' id="tech1">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="" width={80} className='mx-auto drop-shadow-lg drop-shadow-black' />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto drop-shadow-lg drop-shadow-black' />
             {/* <p className='text-center text-blue-950 font-mono text-2xl font-bold hover:b'>Node JS</p> */}
           </div>
 
           <div className='bg-gradient-to-br from-blue-900 to-yellow-600 rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out' id="tech1">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" width={80} className='mx-auto drop-shadow-lg drop-shadow-black' />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto drop-shadow-lg drop-shadow-black' />
             {/* <p className='text-center text-blue-950 font-mono text-2xl font-bold hover:b'>Python</p> */}
           </div>
 
           <div className='bg-gradient-to-b from-orange-800 to-sky-700 rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out' id="tech1">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" width={80} className='mx-auto drop-shadow-lg drop-shadow-black' />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto drop-shadow-lg drop-shadow-black' />
             {/* <p className='text-center text-blue-950 font-mono text-2xl font-bold hover:b'>JAVA</p> */}
           </div>
 
           <div className='bg-green-600 rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out' id="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="" width={80} className='mx-auto drop-shadow-lg drop-shadow-black' />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto drop-shadow-lg drop-shadow-black' />
             {/* <p className='text-center text-blue-950 font-mono text-2xl font-bold hover:b'>MongoDB</p> */}
           </div>
 
           <div className='bg-sky-500 rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out' id="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" width={80} className='mx-auto drop-shadow-lg drop-shadow-white' />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto drop-shadow-lg drop-shadow-white' />
             {/* <p className='text-center text-blue-950 font-mono text-2xl font-bold hover:b'>MySql</p> */}
           </div>
 
           <div className='bg-white rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out' id="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="" width={80} className='mx-auto bg-white drop-shadow-lg drop-shadow-black' />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto bg-white drop-shadow-lg drop-shadow-black' />
             {/* <p className='text-center text-blue-950 font-mono text-2xl font-bold'>Github</p> */}
           </div>
 
           <div className='bg-sky-400 rounded-full py-5 hover:shadow-lg hover:shadow-lime-50 transition-all duration-700 ease-in-out' id="tech">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="" width={80} className='mx-auto drop-shadow-lg drop-shadow-black' />
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt=""  className='w-[60px] md:w-[80px] mx-auto drop-shadow-lg drop-shadow-black' />
             {/* <p className='text-center text-blue-950 font-mono text-2xl font-bold'>Docker</p> */}
           </div>
 
