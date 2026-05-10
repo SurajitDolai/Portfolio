@@ -62,7 +62,7 @@ export default function ContactPage() {
                     </div>
                 </div>
                 <div className='text-white flex flex-col justify-center items-center  pb-2 mt-[6%]'>
-                    <p className='flex font-mono text-[10px] md:text-[17px]'><FaRegCopyright className='mt-1 font-mono' />2025 Surajit. All rights reserved</p>
+                    <p className='flex font-mono text-[10px] md:text-[17px]'><FaRegCopyright className='mt-1 font-mono' />2026 Surajit. All rights reserved</p>
                     <p className='font-mono text-[10px] md:text-[16px]'>Designed by Surajit Dolai</p>
                 </div>
             </div>
